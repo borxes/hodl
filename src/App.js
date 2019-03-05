@@ -40,6 +40,22 @@ const App = ({ classes }) => {
       {coin && Number(amount) !== 0 && (
         <Output coinSymbol={coin} amount={amount} />
       )}
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+          HODL They Said... (c)2019
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          color="textSecondary"
+          component="p"
+        >
+          Made by <a href="https://twitter.com/yurasherman">@yurasherman</a>.
+          View <a href="https://github.com/borxes/hodl"> source code </a>.
+        </Typography>
+      </footer>
+      {/* End footer */}
     </div>
   );
 };

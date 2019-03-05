@@ -33,12 +33,13 @@ const styles = theme => ({
     width: '70%',
     margin: '0 auto',
     marginTop: '2em',
-    fontSize: '2em',
     textAlign: 'center',
+    fontSize: '1.4em',
   },
   dolla: {
     backgroundColor: '#4a148c',
     color: '#eeeeee',
+    fontSize: '1.6em',
   },
 });
 
@@ -63,18 +64,28 @@ function Output({ coinSymbol, amount, classes }) {
   return (
     <div>
       {coinSymbol && coinData.status === 'OK' && (
-        <Typography variant="subtitle1" className={classes.output}>
-          ${coinSymbol} All Time High was{' '}
-          <span className={classes.dolla}>${ath}</span>. You could have sold
-          your {amount} coins for{' '}
-          <span className={classes.dolla}>${athSum}</span>. Instead you HEDL and
-          now it's worth $<span className={classes.dolla}>{currentSum}</span>.
-          You've lost{' '}
-          <strong>
-            <span className={classes.dolla}>${losses}</span>
-          </strong>{' '}
-          to the HODL meme.
-        </Typography>
+        <div>
+          <Typography variant="subtitle1" className={classes.output}>
+            ${coinSymbol} All Time High was{' '}
+            <span className={classes.dolla}>${ath}</span>. You could have sold
+            your {amount} coins for{' '}
+            <span className={classes.dolla}>${athSum}</span>. Instead you HEDL
+            and now it's worth $
+            <span className={classes.dolla}>{currentSum}</span>. You've lost{' '}
+            <strong>
+              <span className={classes.dolla}>${losses}</span>
+            </strong>{' '}
+            to the HODL meme.
+          </Typography>
+          <iframe
+            title="laughing cowboy"
+            src="https://giphy.com/embed/11aitZSSRhHYuQ"
+            width="480"
+            height="205"
+            frameBorder="0"
+            className="giphy-embed"
+          />
+        </div>
       )}
       {coinSymbol && coinData.status !== 'OK' && (
         <Typography color="error" gutterBottom variant="subtitle1">

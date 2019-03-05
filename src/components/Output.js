@@ -58,20 +58,20 @@ function Output({ coinSymbol, amount, classes }) {
   const ath = Number.parseFloat(coinData.ath).toFixed(2);
   const athSum = Number.parseFloat(ath * amount).toFixed(2);
   const currentSum = Number.parseFloat(currentPrice * amount).toFixed(2);
+  const losses = Number.parseFloat(athSum - currentSum).toFixed(2);
 
   return (
     <div>
       {coinSymbol && coinData.status === 'OK' && (
         <Typography variant="subtitle1" className={classes.output}>
           ${coinSymbol} All Time High was{' '}
-          <span className={classes.dolla}>{ath}</span>. You could have sold your{' '}
-          {amount} coins for <span className={classes.dolla}>${athSum}</span>.
-          Instead you HEDL and now it's worth $
-          <span className={classes.dolla}>{currentSum}</span>. You've lost{' '}
+          <span className={classes.dolla}>${ath}</span>. You could have sold
+          your {amount} coins for{' '}
+          <span className={classes.dolla}>${athSum}</span>. Instead you HEDL and
+          now it's worth $<span className={classes.dolla}>{currentSum}</span>.
+          You've lost{' '}
           <strong>
-            <span className={classes.dolla}>
-              ${ath * amount - currentPrice * amount}
-            </span>
+            <span className={classes.dolla}>${losses}</span>
           </strong>{' '}
           to the HODL meme.
         </Typography>

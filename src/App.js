@@ -20,7 +20,7 @@ const styles = theme => ({
 
 const App = ({ classes }) => {
   const [coin, setCoin] = useState('');
-  const [amount, setAmount] = useState(1);
+  const [amount, setAmount] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -37,9 +37,9 @@ const App = ({ classes }) => {
           <Amount update={setAmount} symbol={coin} />
         </div>
       )}
-      <p>
-        Selected {coin} Amount {amount} Menu: {menuOpen ? 'open' : 'closed'}
-      </p>
+      {coin && Number(amount) !== 0 && (
+        <Output coinSymbol={coin} amount={amount} />
+      )}
     </div>
   );
 };

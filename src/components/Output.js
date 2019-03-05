@@ -34,12 +34,34 @@ const styles = theme => ({
     margin: '0 auto',
     marginTop: '2em',
     textAlign: 'center',
-    fontSize: '1.4em',
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1em',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2em',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.4em',
+    },
   },
   dolla: {
     backgroundColor: '#4a148c',
     color: '#eeeeee',
-    fontSize: '1.6em',
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2em',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.4em',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.6em',
+    },
   },
 });
 

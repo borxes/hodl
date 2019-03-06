@@ -11,3 +11,5 @@ It uses:
     1. `CoinPaprika` for retrieving the list of top 100 cryptocurrencies
     2. `Messari` for retrieving the all time high and current prices of the chosen cryptocurrency
 
+The app is deployed on `Netlify`.
+

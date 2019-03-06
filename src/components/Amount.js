@@ -15,7 +15,7 @@ const styles = theme => ({
     width: '70%',
   },
   amount: {
-    marginTop: theme.spacing.unit * -15,
+    marginTop: theme.spacing.unit * -20,
   },
 });
 

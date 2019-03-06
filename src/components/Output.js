@@ -40,11 +40,11 @@ const styles = theme => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.2em',
+      fontSize: '1em',
     },
 
     [theme.breakpoints.up('lg')]: {
-      fontSize: '1.4em',
+      fontSize: '1.1em',
     },
   },
   dolla: {
@@ -52,15 +52,15 @@ const styles = theme => ({
     color: '#eeeeee',
 
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1.2em',
+      fontSize: '1em',
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.4em',
+      fontSize: '1em',
     },
 
     [theme.breakpoints.up('lg')]: {
-      fontSize: '1.6em',
+      fontSize: '1.2em',
     },
   },
 });
@@ -88,16 +88,20 @@ function Output({ coinSymbol, amount, classes }) {
       {coinSymbol && coinData.status === 'OK' && (
         <div>
           <Typography variant="subtitle1" className={classes.output}>
-            ${coinSymbol} All Time High was{' '}
-            <span className={classes.dolla}>${ath}</span>. You could have sold
-            your {amount} coins for{' '}
-            <span className={classes.dolla}>${athSum}</span>. Instead you HEDL
-            and now it's worth $
-            <span className={classes.dolla}>{currentSum}</span>. You've lost{' '}
-            <strong>
-              <span className={classes.dolla}>${losses}</span>
-            </strong>{' '}
-            to the HODL meme.
+            <p>
+              ${coinSymbol} All Time High was{' '}
+              <span className={classes.dolla}>${ath}</span> and could have sold
+              your {amount} coins for{' '}
+              <span className={classes.dolla}>${athSum}</span>.
+            </p>
+            <p>
+              Instead you HEDL and now they're worth only{' '}
+              <span className={classes.dolla}>${currentSum}</span>.
+            </p>
+            <p>
+              You've lost <span className={classes.dolla}>${losses}</span> to
+              the HODL meme.
+            </p>
           </Typography>
           <iframe
             title="laughing cowboy"

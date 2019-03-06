@@ -90,8 +90,8 @@ function Output({ coinSymbol, amount, classes }) {
           <Typography variant="subtitle1" className={classes.output}>
             <p>
               ${coinSymbol} All Time High was{' '}
-              <span className={classes.dolla}>${ath}</span> and could have sold
-              your {amount} coins for{' '}
+              <span className={classes.dolla}>${ath}</span> and you could have
+              sold your {amount} coins for{' '}
               <span className={classes.dolla}>${athSum}</span>.
             </p>
             <p>

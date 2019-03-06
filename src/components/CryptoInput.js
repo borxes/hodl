@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { fromPairs } from 'lodash';
 import AutoComplete from './AutoComplete';
+import InputLabel from '@material-ui/core/InputLabel';
 
 async function top100coins() {
   const response = await axios.get('https://api.coinpaprika.com/v1/coins');
@@ -30,11 +31,13 @@ const CryptoInput = ({ setCoin, setMenuOpen }) => {
     value: coins[coin],
   }));
   return (
-    <AutoComplete
-      options={options}
-      update={setCoin}
-      setMenuState={setMenuOpen}
-    />
+    <div>
+      <AutoComplete
+        options={options}
+        update={setCoin}
+        setMenuState={setMenuOpen}
+      />
+    </div>
   );
 };
 

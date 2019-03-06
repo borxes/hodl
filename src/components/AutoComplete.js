@@ -68,19 +68,21 @@ function inputComponent({ inputRef, ...props }) {
 
 function Control(props) {
   return (
-    <TextField
-      fullWidth
-      InputProps={{
-        inputComponent,
-        inputProps: {
-          className: props.selectProps.classes.input,
-          inputRef: props.innerRef,
-          children: props.children,
-          ...props.innerProps,
-        },
-      }}
-      {...props.selectProps.textFieldProps}
-    />
+    <div>
+      <TextField
+        fullWidth
+        InputProps={{
+          inputComponent,
+          inputProps: {
+            className: props.selectProps.classes.input,
+            inputRef: props.innerRef,
+            children: props.children,
+            ...props.innerProps,
+          },
+        }}
+        {...props.selectProps.textFieldProps}
+      />
+    </div>
   );
 }
 
